@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   scope :api, defaults: { format: :json } do
-    resources :pages, param: :url, expect: [:edit]
+    resources :pages, param: :url, only: [:index, :create]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

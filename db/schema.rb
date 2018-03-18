@@ -11,13 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180318034222) do
+ActiveRecord::Schema.define(version: 20180318211818) do
+
+  create_table "contents", force: :cascade do |t|
+    t.string   "tag"
+    t.string   "text"
+    t.string   "href"
+    t.integer  "page_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "contents", ["page_id"], name: "index_contents_on_page_id"
 
   create_table "pages", force: :cascade do |t|
     t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "content"
   end
 
   add_index "pages", ["url"], name: "index_pages_on_url", unique: true
