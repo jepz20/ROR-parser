@@ -1,23 +1,22 @@
-== README
 
- Parse and extract the content from the h1, h2, h3 and links from a url
+# ROR PARSER
 
-* Ruby version
+Parse and extract the content from the h1, h2, h3 and links from a url
+
+## Ruby version
   Ruby Version 2.1, Rails 4.2.6
 
-* Database initialization
+## Database initialization
   run `rake db:migrate` to initialize the database
 
-* ...
+## Endpoints
 
-Endpoints
-
-[GET] pages
+### [GET] pages
 returns a list parse pages with the content detail
 
-[POST] pages
+### [POST] pages
 params: url
-
-{"page":{"url":"http://me.com"}}
-
+```
+{"page":{"url":"http://example.com"}}
+```
 parse the content and save the page content. returns the parsed content.
